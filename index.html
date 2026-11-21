@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Frontend Mentor | Gamer sign-up form</title>
+
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+  <main class="page">
+
+    <!-- Coluna da marca -->
+    <section class="brand">
+      <div class="brand__header">
+        <img class="brand__logo" src="./assets/images/logo.svg" alt="NEONCORE" width="169" height="32">
+        <p class="brand__ready ready-count">0/5 ready</p>
+      </div>
+
+      <h1 class="brand__title"><span class="slash" aria-hidden="true">//</span>Join the nexus</h1>
+      <p class="brand__subtitle">Initialize your NEONCORE identity</p>
+
+      <div class="readout">
+        <div class="readout__top">
+          <p class="readout__label">Operator ID</p>
+          <p class="readout__ready ready-count">0/5 ready</p>
+        </div>
+        <p class="readout__id is-empty" id="operator-id">Unassigned</p>
+
+        <ul class="readout__rows">
+          <li class="readout__row">
+            <span>Callsign</span>
+            <span class="readout__status" data-row="callsign">Pending</span>
+          </li>
+          <li class="readout__row">
+            <span>Email</span>
+            <span class="readout__status" data-row="email">Pending</span>
+          </li>
+          <li class="readout__row">
+            <span>Password</span>
+            <span class="readout__status" data-row="password">Pending</span>
+          </li>
+          <li class="readout__row">
+            <span>Confirm</span>
+            <span class="readout__status" data-row="confirm">Pending</span>
+          </li>
+          <li class="readout__row">
+            <span>Terms</span>
+            <span class="readout__status" data-row="terms">Required</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Formulário -->
+    <section class="panel">
+
+      <form class="form" id="signup-form" aria-labelledby="form-title" novalidate>
+        <div class="form__header">
+          <h2 class="form__title" id="form-title">New operator</h2>
+          <p class="form__required">
+            <span class="desktop-only">All fields required</span>
+            <span class="mobile-only">All required</span>
+          </p>
+        </div>
+
+        <fieldset class="form__fields">
+          <div class="field" data-field="callsign">
+            <label class="field__label" for="callsign">Callsign</label>
+            <div class="field__control">
+              <input class="field__input" type="text" id="callsign" name="callsign"
+                     placeholder="e.g. Vortex_07" autocomplete="username"
+                     aria-describedby="callsign-msg" required>
+              <img class="field__tick" src="./assets/images/icon-tick-20.svg" alt="" width="20" height="20">
+            </div>
+            <p class="field__msg" id="callsign-msg">3–20 characters: letters, numbers, _ or -</p>
+          </div>
+
+          <div class="field" data-field="email">
+            <label class="field__label" for="email">Email</label>
+            <div class="field__control">
+              <input class="field__input" type="email" id="email" name="email"
+                     placeholder="you@example.com" autocomplete="email"
+                     aria-describedby="email-msg" required>
+              <img class="field__tick" src="./assets/images/icon-tick-20.svg" alt="" width="20" height="20">
+            </div>
+            <p class="field__msg" id="email-msg"></p>
+          </div>
+
+          <div class="field field--password" data-field="password">
+            <label class="field__label" for="password">Password</label>
+            <div class="field__control">
+              <input class="field__input" type="password" id="password" name="password"
+                     autocomplete="new-password" aria-describedby="password-msg password-strength" required>
+              <img class="field__tick" src="./assets/images/icon-tick-20.svg" alt="" width="20" height="20">
+              <button class="field__toggle" type="button" aria-label="Show password" aria-pressed="false" aria-controls="password">
+                <img src="./assets/images/icon-eye.svg" alt="" width="20" height="20">
+              </button>
+            </div>
+            <div class="strength" data-level="0" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="field__bottom">
+              <p class="field__msg" id="password-msg">At least 8 characters</p>
+              <p class="strength__label" aria-live="polite">
+                <span class="sr-only" id="strength-prefix" hidden>Password strength:</span>
+                <span id="password-strength"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="field field--password" data-field="confirm">
+            <label class="field__label" for="confirm">Confirm password</label>
+            <div class="field__control">
+              <input class="field__input" type="password" id="confirm" name="confirm"
+                     autocomplete="new-password" aria-describedby="confirm-msg" required>
+              <img class="field__tick" src="./assets/images/icon-tick-20.svg" alt="" width="20" height="20">
+              <button class="field__toggle" type="button" aria-label="Show confirm password" aria-pressed="false" aria-controls="confirm">
+                <img src="./assets/images/icon-eye.svg" alt="" width="20" height="20">
+              </button>
+            </div>
+            <p class="field__msg" id="confirm-msg"></p>
+          </div>
+
+          <div class="field field--checkbox" data-field="terms">
+            <div class="checkbox">
+              <input class="checkbox__input" type="checkbox" id="terms" name="terms"
+                     aria-describedby="terms-msg" required>
+              <label class="checkbox__label" for="terms">
+                I accept the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+              </label>
+            </div>
+            <p class="field__msg" id="terms-msg"></p>
+          </div>
+        </fieldset>
+
+        <button class="btn form__submit" type="submit">Initialize account</button>
+
+        <p class="form__login">Already an operator? <a href="#">Log in</a></p>
+
+        <p class="sr-only" id="form-status" role="status"></p>
+      </form>
+
+      <!-- Tela de sucesso -->
+      <div class="success" id="success" hidden>
+        <img class="success__icon" src="./assets/images/icon-hex-check.svg" alt="" width="78" height="72">
+        <h2 class="success__title" id="success-title" tabindex="-1">
+          <span class="slash" aria-hidden="true">//</span>Handshake complete
+        </h2>
+        <p class="success__text">
+          Operator <span class="success__name" id="success-name"></span> provisioned. Your account is ready.
+        </p>
+        <a class="btn" href="#">Continue to log in</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/leonardonmariano">Leonardo N Mariano</a>.
+  </footer>
+</body>
+</html>
