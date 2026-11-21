@@ -38,7 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub repository](https://github.com/leonardonmariano/gamer-sign-up-form)
+- Solution URL: [Frontend Mentor solution](https://www.frontendmentor.io/solutions/gamer-sign-up-form-with-accessible-validation-in-vanilla-js-tFeLp1YNge)
+- Repository: [GitHub](https://github.com/leonardonmariano/gamer-sign-up-form)
 - Live Site URL: [GitHub Pages](https://leonardonmariano.github.io/gamer-sign-up-form/)
 
 ## My process
