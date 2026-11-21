@@ -84,7 +84,7 @@ For the password strength meter, I liked styling the segments with a `data-level
 
 ### Continued development
 
-I want to keep practicing accessibility, especially testing with a real screen reader and navigating only with the keyboard. I also want to get more comfortable organizing JavaScript as projects grow, so the code stays easy to read.
+I tested the whole form using only the keyboard (Tab, Shift + Tab, Space and Enter): every field, the password toggles, the checkbox, the links and the submit button can be reached and used, and focus moves to the success heading at the end. Next, I want to keep practicing accessibility by testing with a real screen reader. I also want to get more comfortable organizing JavaScript as projects grow, so the code stays easy to read.
 
 ### Useful resources
 
