@@ -12,7 +12,6 @@ const readyCounts = document.querySelectorAll(".ready-count");
 
 const meter = document.querySelector(".strength");
 const strengthLabel = document.querySelector(".strength__label");
-const strengthPrefix = document.getElementById("strength-prefix");
 const strengthValue = document.getElementById("password-strength");
 
 const inputs = {
@@ -144,7 +143,6 @@ function updateStrength() {
 
   meter.dataset.level = level;
   strengthValue.textContent = name;
-  strengthPrefix.hidden = level === 0;
   strengthLabel.className = "strength__label " + name.toLowerCase();
 }
 
